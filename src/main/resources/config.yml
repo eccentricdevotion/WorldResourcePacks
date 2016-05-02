@@ -1,0 +1,6 @@
+default: https://dl.dropboxusercontent.com/u/53758864/rp/Default.zip
+worlds:
+    world: default
+    world_nether: default
+    world_the_end: default
+set_pack_on_join: true

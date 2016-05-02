@@ -1,0 +1,22 @@
+author: eccentric_nz
+description: Set different resource packs for worlds
+main: me.eccentric_nz.worldresourcepacks.WorldResourcePacks
+name: WorldResourcePacks
+load: POSTWORLD
+version: '1.0'
+website: http://dev.bukkit.org/bukkit-plugins/worldresourcepacks
+dev-url: http://dev.bukkit.org/bukkit-plugins/worldresourcepacks
+url: http://dev.bukkit.org/bukkit-plugins/worldresourcepacks
+permissions:
+    worldresourcepacks.reload:
+        description: Allows a player to reload the WorldResourcePacks config.
+        default: op
+commands:
+    worldresourcepacks:
+        aliases: [wrp]
+        description: A description.
+        usage: /<command> reload
+        permission: worldresourcepacks.reload
+        permission-message: You don't have the permission <permission> to use this command
+softdepend: [Multiverse-Core,MultiWorld]
+depend: []
