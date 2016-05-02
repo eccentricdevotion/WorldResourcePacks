@@ -1,5 +1,5 @@
 author: eccentric_nz
-description: Set different resource packs for worlds
+description: Set different resource packs for different worlds
 main: me.eccentric_nz.worldresourcepacks.WorldResourcePacks
 name: WorldResourcePacks
 load: POSTWORLD
