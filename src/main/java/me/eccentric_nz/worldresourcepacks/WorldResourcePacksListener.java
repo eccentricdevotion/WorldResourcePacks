@@ -34,7 +34,7 @@ public class WorldResourcePacksListener implements Listener {
     private void setResourcePack(Player player, String world) {
         if (player.isOnline()) {
             String path = plugin.getConfig().getString("worlds." + world);
-            if (path.equalsIgnoreCase("default")) {
+            if (path == null || path.equalsIgnoreCase("default")) {
                 path = plugin.getConfig().getString("default");
             }
             player.setResourcePack(path);
