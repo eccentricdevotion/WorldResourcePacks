@@ -3,7 +3,7 @@ description: Set different resource packs for different worlds
 main: me.eccentric_nz.worldresourcepacks.WorldResourcePacks
 name: WorldResourcePacks
 load: POSTWORLD
-version: '1.0'
+version: '1.0.1'
 website: http://dev.bukkit.org/bukkit-plugins/worldresourcepacks
 dev-url: http://dev.bukkit.org/bukkit-plugins/worldresourcepacks
 url: http://dev.bukkit.org/bukkit-plugins/worldresourcepacks

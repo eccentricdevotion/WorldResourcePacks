@@ -19,7 +19,18 @@ public class WorldResourcePacksListener implements Listener {
     public void onWorldChange(PlayerChangedWorldEvent event) {
         final Player player = event.getPlayer();
         String world = player.getWorld().getName();
-        setResourcePack(player, world);
+        String from = plugin.getConfig().getString("worlds." + event.getFrom().getName());
+        if (from == null) {
+            from = "default";
+        }
+        String path = plugin.getConfig().getString("worlds." + world);
+        if (path == null) {
+            path = "default";
+        }
+        // check to see whether the resource pack URL is actually different
+        if (!from.equals(path)) {
+            setResourcePack(player, path);
+        }
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
@@ -27,16 +38,16 @@ public class WorldResourcePacksListener implements Listener {
         if (plugin.getConfig().getBoolean("set_pack_on_join")) {
             final Player player = event.getPlayer();
             String world = player.getWorld().getName();
-            setResourcePack(player, world);
+            String path = plugin.getConfig().getString("worlds." + world);
+            setResourcePack(player, path);
         }
     }
 
-    private void setResourcePack(Player player, String world) {
+    private void setResourcePack(Player player, String path) {
+        if (path == null || path.equalsIgnoreCase("default")) {
+            path = plugin.getConfig().getString("default");
+        }
         if (player.isOnline()) {
-            String path = plugin.getConfig().getString("worlds." + world);
-            if (path == null || path.equalsIgnoreCase("default")) {
-                path = plugin.getConfig().getString("default");
-            }
             player.setResourcePack(path);
         }
     }
