@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class WorldResourcePacks extends JavaPlugin {
 
     public String pluginName;
+
     @Override
     public void onDisable() {
         // TODO: Place any custom disable code here.

@@ -17,7 +17,7 @@ public class WorldResourcePacksListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onWorldChange(PlayerChangedWorldEvent event) {
-        final Player player = event.getPlayer();
+        Player player = event.getPlayer();
         String world = player.getWorld().getName();
         String from = plugin.getConfig().getString("worlds." + event.getFrom().getName());
         if (from == null) {
@@ -36,7 +36,7 @@ public class WorldResourcePacksListener implements Listener {
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (plugin.getConfig().getBoolean("set_pack_on_join")) {
-            final Player player = event.getPlayer();
+            Player player = event.getPlayer();
             String world = player.getWorld().getName();
             String path = plugin.getConfig().getString("worlds." + world);
             setResourcePack(player, path);

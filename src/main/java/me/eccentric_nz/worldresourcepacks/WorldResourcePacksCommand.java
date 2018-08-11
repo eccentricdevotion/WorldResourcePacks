@@ -13,7 +13,7 @@ public class WorldResourcePacksCommand implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(final CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("worldresourcepacks")) {
             // do stuff
             if (args[0].equalsIgnoreCase("reload")) {
